@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Confirmacion</title>
+</head>
+<body>
+  <section class="confirmation">
+    <div class="confirmation-header">
+        <i class="fas fa-check-circle"></i>
+        <h2>¡Preselección Registrada Exitosamente!</h2>
+    </div>
+    
+    <div class="confirmation-details">
+        <div class="student-info">
+            <h3>Datos del Estudiante</h3>
+            <p><strong>Matrícula:</strong> <%= student.studentId %></p>
+            <p><strong>Nombre:</strong> <%= student.name %></p>
+            <p><strong>Correo:</strong> <%= student.email %></p>
+            <p><strong>Fecha de registro:</strong> <%= new Date(student.registrationDate).toLocaleString() %></p>
+        </div>
+        
+        <div class="subjects-info">
+            <h3>Materias Seleccionadas</h3>
+            <ul>
+                <% subjects.forEach(subject => { %>
+                    <li>
+                        <strong><%= subject.name %></strong> (<%= subject.code %>)
+                        <span class="badge">Cupo: <%= subject.quota %></span>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="confirmation-actions">
+        <a href="/stats" class="btn btn-primary">
+            <i class="fas fa-chart-bar"></i> Ver Estadísticas
+        </a>
+        <a href="/" class="btn btn-secondary">
+            <i class="fas fa-home"></i> Volver al Inicio
+        </a>
+    </div>
+    
+    <div class="confirmation-notice">
+        <i class="fas fa-info-circle"></i>
+        <p>Recibirás un correo electrónico con la confirmación oficial una vez que se cierre el período de preselección y se asignen las materias según disponibilidad.</p>
+    </div>
+</section>
+</body>
+</html>
+

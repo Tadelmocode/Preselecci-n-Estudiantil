@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/register.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Preselección de Materias - Ingeniería en Informática</title> 
+</head>
+<body>
+  <section class="registration-form">
+    <h2><i class="fas fa-book-open"></i> Formulario de Preselección</h2>
+    
+    <% if (locals.error) { %>
+      <div class="alert alert-error">
+        <i class="fas fa-exclamation-circle"></i>
+        <%= locals.error %>
+      </div>
+    <% } %>
+    
+    <form action="/register" method="POST" id="preselectionForm">
+      <div class="form-group">
+        <label for="studentId"><i class="fas fa-id-card"></i> Matrícula:</label>
+        <input type="text" id="studentId" name="studentId" required placeholder="Ej. A01234567">
+      </div>
+      
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i> Nombre Completo:</label>
+        <input type="text" id="name" name="name" required placeholder="Ej. Juan Pérez García">
+      </div>
+      
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required placeholder="Ej. juan.perez@ejemplo.com">
+      </div>
+      
+      <div class="form-group">
+        <label><i class="fas fa-book"></i> Materias Disponibles:</label>
+        <p class="form-hint">Selecciona entre 1 y 2 materias de tu interés</p>
+        
+         <div class="semester-group">
+          <h3><i class="fas fa-calendar-alt"></i> Primer Semestre</h3>
+          <div class="subjects-grid">
+            <div class="subject-card">
+              <input type="checkbox" id="subject-1" name="selectedSubjects" value="1">
+              <label for="subject-1">
+                <h4>Logica Matematica</h4>
+                <p><i class="fas fa-code"></i> MATH-101</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 30 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-2" name="selectedSubjects" value="2">
+              <label for="subject-2">
+                <h4>Matematica I</h4>
+                <p><i class="fas fa-code"></i> MATH-102</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 30 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-3" name="selectedSubjects" value="3">
+              <label for="subject-3">
+                <h4>Economia Digital</h4>
+                <p><i class="fas fa-code"></i> PHYS-101</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-4" name="selectedSubjects" value="4">
+              <label for="subject-4">
+                <h4>Fundamentos de la Informática</h4>
+                <p><i class="fas fa-code"></i> INFO-101</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+          </div>
+       <div class="semester-group">
+          <h3><i class="fas fa-calendar-alt"></i> Segundo Semestre</h3>
+          <div class="subjects-grid">
+            <div class="subject-card">
+              <input type="checkbox" id="subject-5" name="selectedSubjects" value="5">
+              <label for="subject-5">
+                <h4>Algoritmos I</h4>
+                <p><i class="fas fa-code"></i> MATH-103</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-6" name="selectedSubjects" value="6">
+              <label for="subject-6">
+                <h4>Matematica II</h4>
+                <p><i class="fas fa-code"></i> MATH-201</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 30 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-7" name="selectedSubjects" value="7">
+              <label for="subject-7">
+                <h4>Fisica I</h4>
+                <p><i class="fas fa-code"></i> INFO-201</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-8" name="selectedSubjects" value="8">
+              <label for="subject-8">
+                <h4>Arte y Cultura</h4>
+                <p><i class="fas fa-code"></i> INFO-202</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+       <div class="semester-group">
+          <h3><i class="fas fa-calendar-alt"></i> Tercer Semestre</h3>
+          <div class="subjects-grid">
+            <div class="subject-card">
+              <input type="checkbox" id="subject-9" name="selectedSubjects" value="9">
+              <label for="subject-9">
+                <h4>Algoritmos II</h4>
+                <p><i class="fas fa-code"></i> ELEC-201</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 20 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-10" name="selectedSubjects" value="10">
+              <label for="subject-10">
+                <h4>Programacion I</h4>
+                <p><i class="fas fa-code"></i> MATH-202</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-11" name="selectedSubjects" value="11">
+              <label for="subject-11">
+                <h4>Fisica II</h4>
+                <p><i class="fas fa-code"></i> INFO-301</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-12" name="selectedSubjects" value="12">
+              <label for="subject-12">
+                <h4>Matematica III</h4>
+                <p><i class="fas fa-code"></i> INFO-302</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 20 estudiantes</p>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+         <div class="semester-group">
+          <h3><i class="fas fa-calendar-alt"></i> Cuarto Semestre</h3>
+          <div class="subjects-grid">
+            <div class="subject-card">
+              <input type="checkbox" id="subject-13" name="selectedSubjects" value="13">
+              <label for="subject-13">
+                <h4>Programacion II</h4>
+                <p><i class="fas fa-code"></i> INFO-303</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-14" name="selectedSubjects" value="14">
+              <label for="subject-14">
+                <h4>Base de Datos</h4>
+                <p><i class="fas fa-code"></i> INFO-304</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-15" name="selectedSubjects" value="15">
+              <label for="subject-15">
+                <h4>Matematica IV</h4>
+                <p><i class="fas fa-code"></i> INFO-401</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 20 estudiantes</p>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+       <div class="semester-group">
+          <h3><i class="fas fa-calendar-alt"></i> Quinto Semestre</h3>
+          <div class="subjects-grid">
+            <div class="subject-card">
+              <input type="checkbox" id="subject-16" name="selectedSubjects" value="16">
+              <label for="subject-16">
+                <h4>Programacion III</h4>
+                <p><i class="fas fa-code"></i> INFO-402</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-17" name="selectedSubjects" value="17">
+              <label for="subject-17">
+                <h4>Estructuras Discretas II</h4>
+                <p><i class="fas fa-code"></i> INFO-403</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 20 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-18" name="selectedSubjects" value="18">
+              <label for="subject-18">
+                <h4>Organizacion del Computador</h4>
+                <p><i class="fas fa-code"></i> INFO-404</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 25 estudiantes</p>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+         <div class="semester-group">
+          <h3><i class="fas fa-calendar-alt"></i> Sexto Semestre</h3>
+          <div class="subjects-grid">
+            <div class="subject-card">
+              <input type="checkbox" id="subject-19" name="selectedSubjects" value="19">
+              <label for="subject-19">
+                <h4>Investigacion de Operaciones</h4>
+                <p><i class="fas fa-code"></i> INFO-501</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 20 estudiantes</p>
+              </label>
+            </div>
+            
+            <div class="subject-card">
+              <input type="checkbox" id="subject-20" name="selectedSubjects" value="20">
+              <label for="subject-20">
+                <h4>Metodos Numericos</h4>
+                <p><i class="fas fa-code"></i> INFO-502</p>
+                <p class="quota"><i class="fas fa-users"></i> Cupo: 15 estudiantes</p>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="counter" id="selectionCounter">0/2 materias seleccionadas</div>
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Enviar Preselección
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <div class="registration-info">
+    <h3><i class="fas fa-info-circle"></i> Instrucciones:</h3>
+    <ol>
+      <li>Completa todos tus datos personales correctamente.</li>
+      <li><strong>Selecciona entre 1 y 2 materias</strong> de tu interés.</li>
+      <li>Las materias están organizadas por semestre.</li>
+      <li>Considera los prerrequisitos al seleccionar materias.</li>
+      <li>Recibirás una confirmación por correo electrónico.</li>
+      <li>El sistema asignará materias según disponibilidad.</li>
+    </ol>
+    
+    <div class="alert alert-info">
+      <i class="fas fa-exclamation-triangle"></i> <strong>Importante:</strong> 
+      El cupo mostrado es referencial y está sujeto a cambios según disponibilidad real.
+    </div>
+  </div>
+
+  <script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+ /*estilos mejorados en css para register*/
+
+ body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f7fa;
+      padding: 20px;
+    }
+    
+    .registration-form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    
+    h3 {
+      color: #3498db;
+      margin: 25px 0 15px 0;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
+    
+    .form-hint {
+      color: #666;
+      font-size: 0.9em;
+      margin-top: -10px;
+      margin-bottom: 15px;
+    }
+    
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+    }
+    
+    .subject-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 15px;
+      transition: all 0.3s ease;
+      background: white;
+      position: relative;
+    }
+    
+    .subject-card:hover {
+      border-color: #3498db;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+    }
+    
+    .subject-card h4 {
+      margin: 0 0 5px 0;
+      color: #2c3e50;
+      font-size: 1.1em;
+    }
+    
+    .subject-card p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 0.9em;
+    }
+    
+    .quota {
+      font-weight: bold;
+      color: #27ae60 !important;
+    }
+    
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+    }
+    
+    input[type="checkbox"] + label {
+      display: block;
+      padding-left: 30px;
+      position: relative;
+      cursor: pointer;
+    }
+    
+    input[type="checkbox"] + label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #3498db;
+      border-radius: 4px;
+      background: white;
+    }
+    
+    input[type="checkbox"]:checked + label:before {
+      background: #3498db;
+    }
+    
+    input[type="checkbox"]:checked + label:after {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      color: white;
+      font-size: 14px;
+    }
+    
+    .form-actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+    
+    .btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .btn i {
+      margin-right: 8px;
+    }
+    
+    .registration-info {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #3498db;
+    }
+    
+    .registration-info ol {
+      padding-left: 20px;
+    }
+    
+    .registration-info li {
+      margin-bottom: 10px;
+    }
+    
+    .alert {
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .alert i {
+      margin-right: 10px;
+      font-size: 1.2em;
+    }
+    
+    .alert-error {
+      background-color: #fde8e8;
+      color: #e74c3c;
+      border-left: 4px solid #e74c3c;
+    }
+    
+    .alert-info {
+      background-color: #e1f5fe;
+      color: #0288d1;
+      border-left: 4px solid #0288d1;
+    }
+    
+    .counter {
+      display: block;
+      text-align: right;
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 10px;
+    }
+    
+    .counter.warning {
+      color: #e67e22;
+      font-weight: bold;
+    }
+    
+    .counter.error {
+      color: #e74c3c;
+      font-weight: bold;
+    }
