@@ -242,12 +242,7 @@ app.delete('/admin/delete/:id', async (req, res) => {
         res.status(500).send('Error al eliminar el registro');
     }
 });
-  
+    
+module.exports = app;
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
  
-module.exports = app; // Exporta la aplicación para uso en Vercel
-// Esto es necesario para que Vercel pueda manejar la aplicación correctamente
